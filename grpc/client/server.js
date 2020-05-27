@@ -2,14 +2,16 @@ const grpc = require("grpc");
 const protoLoader = require("@grpc/proto-loader");
 
 const PROTO_FILE = `${__dirname}/../protos/books.proto`;
-const SERVICE_B_PATH = process.env.SERVICE_B_PATH || "0.0.0.0:8080";
+const SERVER_PATH = process.env.SERVER_PATH || "0.0.0.0:8080";
 
 const packageDefinition = protoLoader.loadSync(PROTO_FILE);
 const protoDescriptor = grpc.loadPackageDefinition(packageDefinition);
 const Client = protoDescriptor.books.BooksService;
-const Books = new Client(SERVICE_B_PATH, grpc.credentials.createInsecure());
+const Books = new Client(SERVER_PATH, grpc.credentials.createInsecure());
 // const REQUEST_COUNT = process.env.REQUEST_COUNT;
-const REQUEST_COUNT = 100000;
+
+// number of request hits
+const REQUEST_COUNT = 10000;
 
 const getEmptyAsync = call =>
   new Promise((resolve, reject) => {

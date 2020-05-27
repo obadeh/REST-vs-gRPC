@@ -1,16 +1,18 @@
 const request = require("request");
 const http = require("http");
 
+// note that we used keep alive header to more performance
 http.globalAgent.keepAlive = true;
 
 // const REQUEST_COUNT = process.env.REQUEST_COUNT;
-const REQUEST_COUNT = 1000;
-const SERVICE_B_BASE_URL =
-  process.env.SERVICE_B_BASE_URL || "http://localhost:3001";
+// number of request hits
+const REQUEST_COUNT = 10000;
+const SERVER_BASE_URL =
+  process.env.SERVER_BASE_URL || "http://localhost:3001";
 
 const requestAsync = endpoint =>
   new Promise((resolve, reject) => {
-    request(`${SERVICE_B_BASE_URL}${endpoint}`, (err, res, body) =>
+    request(`${SERVER_BASE_URL}${endpoint}`, (err, res, body) =>
       err ? reject(err) : resolve(body)
     );
   });

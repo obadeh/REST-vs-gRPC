@@ -17,5 +17,5 @@ app.get("/books/1", async (req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.info(`Service B running at port ${PORT}`);
+  console.info(`REST server running at port ${PORT}`);
 });

@@ -34,4 +34,4 @@ const getServer = () => {
 const booksServer = getServer();
 booksServer.bind(`0.0.0.0:${PORT}`, grpc.ServerCredentials.createInsecure());
 booksServer.start();
-console.log(`Server running on port ${PORT}`);
+console.log(`gRPC server running on port ${PORT}`);
