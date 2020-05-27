@@ -11,7 +11,7 @@ const Books = new Client(SERVER_PATH, grpc.credentials.createInsecure());
 // const REQUEST_COUNT = process.env.REQUEST_COUNT;
 
 // number of request hits
-const REQUEST_COUNT = 10000;
+const REQUEST_COUNT = 50000;
 
 const getEmptyAsync = call =>
   new Promise((resolve, reject) => {

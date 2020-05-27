@@ -6,7 +6,7 @@ http.globalAgent.keepAlive = true;
 
 // const REQUEST_COUNT = process.env.REQUEST_COUNT;
 // number of request hits
-const REQUEST_COUNT = 10000;
+const REQUEST_COUNT = 50000;
 const SERVER_BASE_URL =
   process.env.SERVER_BASE_URL || "http://localhost:3001";
 
