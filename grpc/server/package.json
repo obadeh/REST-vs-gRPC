@@ -1,0 +1,17 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "NODE_ENV=production PORT=8080 node server.js"
+  },
+  "keywords": [],
+  "author": "obada",
+  "license": "MIT",
+  "dependencies": {
+    "@grpc/proto-loader": "^0.4.0",
+    "express": "^4.16.4",
+    "grpc": "^1.18.0"
+  }
+}

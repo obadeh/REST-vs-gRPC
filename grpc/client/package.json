@@ -1,0 +1,16 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "NODE_ENV=production PORT=3000 REQUEST_COUNT=1000000 SERVICE_B_PATH=ip:8080 node server.js"
+  },
+  "author": "obada",
+  "license": "MIT",
+  "dependencies": {
+    "@grpc/proto-loader": "^0.4.0",
+    "express": "^4.16.4",
+    "grpc": "^1.18.0"
+  }
+}
